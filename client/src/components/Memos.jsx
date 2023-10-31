@@ -5,7 +5,7 @@ const Memos=({state})=>{
     const {contract}=state;
     useEffect(()=>{
         const memosMessage = async()=>{
-          const memos = await contract.getMemos();
+          const memos = await contract.getTeachers();
           setMemos(memos)
           //console.log(memos)
         }
@@ -54,7 +54,7 @@ const Memos=({state})=>{
                           color:"white"
                         }}
                       >
-                        {memo.message}
+                        {memo.password}
                       </td>
                       <td  className="container-fluid"
                         style={{

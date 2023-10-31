@@ -6,10 +6,10 @@ const Buy=({state})=>{
       event.preventDefault();
       const {contract}=state;
       const name = document.querySelector("#name").value;
-      const message = document.querySelector("#message").value;
+      const password = document.querySelector("#password").value;
       //const amount = document.querySelector("#amount").value;
-      const amount = {value:ethers.utils.parseEther("0.001")}
-      const transaction = await contract.buyChai(name,message,amount)
+      const amount = {value:ethers.utils.parseEther("0.00001")}
+      const transaction = await contract.teacher_signup(name,password,amount)
       await transaction.wait();
       alert("Transaction is successul");
       window.location.reload();
@@ -23,8 +23,8 @@ const Buy=({state})=>{
             <span>Name</span>
           </div>
           <div className="inputbox">
-            <input type="text" required="required" id="message" />
-            <span>Message</span>
+            <input type="text" required="required" id="password" />
+            <span>Password</span>
           </div>
           <div className="inputbox">
             <input type="submit" value="Pay"  disabled={!state.contract}/>

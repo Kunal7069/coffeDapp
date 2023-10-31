@@ -16,7 +16,7 @@ function App() {
   useEffect(()=>{
     const template=async()=>{
    
-      const contractAddres="0xa64e3144835aF8781c750ceC432784a68d883266";
+      const contractAddres="0x03D970A75638b83aAd549c882D514D979d12a57f";
       const contractABI=abi.abi;
       //Metamask part
       //1. In order do transactions on goerli testnet
@@ -55,7 +55,7 @@ function App() {
     <p style={{ marginTop: "10px", marginLeft: "5px" }}>
       <small>Connected Account - {account}</small>
     </p>
-   
+    
       <Buy state={state} />
       <Memos state={state} />
    
