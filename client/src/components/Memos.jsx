@@ -32,18 +32,7 @@ const Memos=({state})=>{
                       >
                         {memo.name}
                       </td>
-                      <td 
-                        style={{
-                          backgroundColor: "dodgerblue",
-                          border: "1px solid white",
-                          borderCollapse: "collapse",
-                          padding: "7px",
-                          width: "800px",
-                          color:"white"
-                        }}
-                      >
-                        {new Date(memo.timestamp * 1000).toLocaleString()}
-                      </td>
+                     
                       <td  
                         style={{
                           backgroundColor: "dodgerblue",
@@ -56,18 +45,7 @@ const Memos=({state})=>{
                       >
                         {memo.password}
                       </td>
-                      <td  className="container-fluid"
-                        style={{
-                          backgroundColor: "dodgerblue",
-                          border: "1px solid white",
-                          borderCollapse: "collapse",
-                          padding: "7px",
-                          width: "400px",
-                          color:"white"
-                        }}
-                      >
-                        {memo.from}
-                      </td>
+                      
                     </tr>
              
             );

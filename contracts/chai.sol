@@ -110,8 +110,7 @@ contract chai {
 
   // View the attendance
   function view_attendance(string memory teacher_name,string memory class_name,string memory student_name) public view returns(uint){
-
-    return (attendance[teacher_name][class_name][student_name]*100)/no_classes[teacher_name][class_name];
+     return (attendance[teacher_name][class_name][student_name]*100)/no_classes[teacher_name][class_name];
   }
 
 }

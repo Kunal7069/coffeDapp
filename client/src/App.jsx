@@ -1,8 +1,10 @@
 import { useState,useEffect } from 'react'
+import { BrowserRouter as Router, Route, Link ,Routes} from 'react-router-dom';
 import abi from "./contractJson/chai.json"
 import {ethers} from "ethers"
 import Memos from './components/Memos'
 import Buy from './components/Buy'
+import Login from './components/Login'
 import chai from "./chai.png";
 import './App.css'
 
@@ -50,16 +52,17 @@ function App() {
     template();
   },[])
   return (
-    <div >
-    <img src={chai} className="img-fluid" alt=".." width="100%" />
-    <p style={{ marginTop: "10px", marginLeft: "5px" }}>
-      <small>Connected Account - {account}</small>
-    </p>
-    
-      <Buy state={state} />
-      <Memos state={state} />
+    <>
    
-  </div>
+<Router>
+  <Routes>
+    <Route path="/"  element={<Buy state={state} account={account}/>} />
+    <Route path="/login" element={<Login state={state}/>} />
+    <Route path="/homepage" element={<Memos state={state}/>} />
+    </Routes>
+</Router> 
+
+</>
   )
 }
 
