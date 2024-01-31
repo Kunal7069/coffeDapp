@@ -2,10 +2,16 @@ import { useState,useEffect } from 'react'
 import { BrowserRouter as Router, Route, Link ,Routes} from 'react-router-dom';
 import abi from "./contractJson/chai.json"
 import {ethers} from "ethers"
-import Memos from './components/Memos'
-import Buy from './components/Buy'
-import Login from './components/Login'
-import chai from "./chai.png";
+import Student_Homepage from './components/Student_Homepage'
+import Teacher_Homepage from './components/Teacher_Homepage'
+import Teacher_Signup from './components/Teacher_Signup'
+import Student_Signup from './components/Student_Signup'
+import Teacher_Login from './components/Teacher_Login'
+import Student_Login from './components/Student_Login'
+import Create_Classroom from './components/Create_Classroom'
+import Join_Classroom from './components/Join_Classroom'
+import View_Students from './components/View_Students'
+import HomePage from './components/HomePage'
 import './App.css'
 
 function App() {
@@ -18,7 +24,7 @@ function App() {
   useEffect(()=>{
     const template=async()=>{
    
-      const contractAddres="0x03D970A75638b83aAd549c882D514D979d12a57f";
+      const contractAddres="0x94C659b6c1247198C45c9E9bE59bCb747ADF9642";
       const contractABI=abi.abi;
       //Metamask part
       //1. In order do transactions on goerli testnet
@@ -56,10 +62,17 @@ function App() {
    
 <Router>
   <Routes>
-    <Route path="/"  element={<Buy state={state} account={account}/>} />
-    <Route path="/login" element={<Login state={state}/>} />
-    <Route path="/homepage" element={<Memos state={state}/>} />
-    </Routes>
+    <Route path="/"  element={<HomePage state={state} account={account}/>} />
+    <Route path="/teacher_signup"  element={<Teacher_Signup state={state} account={account}/>} />
+    <Route path="/student_signup"  element={<Student_Signup state={state} account={account}/>} />
+    <Route path="/teacher_login" element={<Teacher_Login state={state}/>} />
+    <Route path="/student_login" element={<Student_Login state={state}/>} />
+    <Route path="/homepage_teacher/:name" element={<Teacher_Homepage state={state}/>} />
+    <Route path="/homepage_student/:name" element={<Student_Homepage state={state}/>} />
+    <Route path="/create_classroom/:name" element={<Create_Classroom state={state}/>} />
+    <Route path="/join_classroom/:name" element={<Join_Classroom state={state}/>} />
+    <Route path="/view_students/:name/:data" element={<View_Students state={state}/>} />
+  </Routes>
 </Router> 
 
 </>

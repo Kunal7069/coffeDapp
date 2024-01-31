@@ -1,0 +1,45 @@
+.container-fluid{
+    margin-left: 120px;
+
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.card {
+    width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+}
+
+.card-content {
+    padding: 16px;
+}
+
+.card-title {
+    margin: 0;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.card-description {
+    color: #777;
+}
+.mainDiv{
+    display: flex;
+    flex-wrap: wrap;
+}

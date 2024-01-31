@@ -1,6 +1,6 @@
 import { useState,useEffect } from "react";
-import "./Login.css"
-const Login=({state})=>{
+import "./Teacher_Login.css"
+const Teacher_Login=({state})=>{
     
     const {contract}=state;
     const login = async(event)=>{
@@ -19,11 +19,11 @@ const Login=({state})=>{
     
         
         if(check==1){
-            const newPageUrl = '/homepage';
+            const newPageUrl = `/homepage_teacher/${name}`;
             window.location.href = newPageUrl;   
         }
         if(check==0){
-            const newPageUrl = '/login';
+            const newPageUrl = '/teacher_login';
             window.location.href = newPageUrl;   
         }
         
@@ -32,7 +32,7 @@ const Login=({state})=>{
         <>
         
         <div className="center">
-         <h1>LOGIN PAGE</h1>
+         <h1>LOGIN</h1>
           <form onSubmit={login}>
             <div className="inputbox">
               <input type="text" required="required" id="name" />
@@ -50,4 +50,4 @@ const Login=({state})=>{
           </>
       );
 }
-export default Login;
+export default Teacher_Login;
